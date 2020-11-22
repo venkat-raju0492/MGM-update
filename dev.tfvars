@@ -1,0 +1,12 @@
+project = "mga"
+region = "us-west-2"
+environment = "dev"
+#domain_name = "mgm.com"
+#cf_certificate_arn_no = ""
+#waf_cidr_allowlist = ["0.0.0.0/"]
+#ssl_method = "sni-only"
+#protocol_version = "TLSv1.2_2019"
+s3_acl_bucket = "private"
+allow_methods = ["HEAD", "DELETE", "POST", "GET", "OPTIONS", "PUT", "PATCH"]
+cache_methods = ["GET","HEAD"]
+static_s3_expiration_days = "90"
