@@ -48,3 +48,67 @@ variable "s3_acl_bucket" {
 variable "static_s3_expiration_days" {
   description = "static s3 bucket expiration days"
 }
+
+variable "backend_lb_allowed_cidrs" {
+  description = "frontend lb allowed cidrs"
+  type = list
+}
+
+variable "backend_allowed_cidrs" {
+  description = "backend allowed cidrs"
+}
+
+variable "deregistration_delay" {
+  description = "load balancer deregistration delays"
+}
+
+variable "health_check_path" {
+  description = "load balancer health check path"
+}
+
+variable "public_subnet_ids" {
+  description = "public subnet ids"
+}
+
+variable "certificate_arn_no" {
+  description = "certificate arn no for load balancer"
+}
+
+variable "ecs_launch_type" {
+  description = "ecs launch type"
+}
+
+variable "private_subnet_ids" {
+  description = "private subnet ids"
+  type = list
+}
+
+variable "backend_ecr_repo" {
+  description = "backend ecr repo"
+}
+
+variable "backend_image_tag" {
+  description = "backend container image tag"
+}
+
+variable "backend_memory" {
+  description = "backend container memory"
+}
+
+variable "backend_cpu" {
+  description = "backend container cpu"
+}
+
+variable "backend_container_port" {
+  description = "backend container port"
+}
+
+variable "ecs_backend_scheduling_strategy" {
+  description = "ecs backend scheduling strategy"
+}
+
+variable "ecs_backend_desired_count" {
+  description = "ecs backend desired no. of containers"
+}
+
+

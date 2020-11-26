@@ -8,9 +8,11 @@ resource "aws_s3_bucket" "s3_bucket" {
   "Id": "MYBUCKETPOLICY",
   "Statement": [
     {
-      "Sid": "PrivateForGetBucketObjects",
+      "Sid": "S3GetObjectForCloudFront",
       "Effect": "Allow",
-      "Principal": {"CanonicalUser": "${var.cf_canonical_user_id}"},
+      "Principal": {
+        "CanonicalUser": "${var.cf_canonical_user_id}"
+      },
       "Action": "s3:GetObject",
       "Resource": "arn:aws:s3:::${var.project}-${var.s3_bucket}-${var.environment}/*"
     }
