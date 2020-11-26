@@ -75,3 +75,32 @@ EOF
     "Name", "${var.project}-ecs-backend-role-${var.environment}"
   ))
 }
+
+resource "aws_iam_role_policy" "ecs_service_policy" {
+  name = "${var.project}-backend-policy-${var.environment}"
+  role = aws_iam_role.ecs_backend_task_role.name
+
+  policy = <<EOF
+{
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Action": [
+            "ec2:Describe*",
+            "elasticloadbalancing:DeregisterInstancesFromLoadBalancer",
+            "elasticloadbalancing:DeregisterTargets",
+            "elasticloadbalancing:Describe*",
+            "elasticloadbalancing:RegisterInstancesWithLoadBalancer",
+            "elasticloadbalancing:RegisterTargets",
+            "ecr:GetAuthorizationToken",
+            "ecr:BatchCheckLayerAvailability",
+            "ecr:BatchGetImage",
+            "ecr:GetDownloadUrlForLayer"
+          ],
+          "Resource": "*"
+        }
+      ]
+    }
+    EOF
+}
