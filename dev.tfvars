@@ -1,4 +1,4 @@
-project = "test"
+project = "nga"
 region = "us-west-2"
 environment = "dev"
 #domain_name = "mgm.com"
@@ -13,7 +13,7 @@ static_s3_expiration_days = "90"
 vpc_id = ""
 backend_allowed_cidrs = []
 backend_lb_allowed_cidrs = []
-deregistration_delay = "20"
+deregistration_delay = ""
 health_check_path = ""
 public_subnet_ids = []
 certificate_arn_no = ""

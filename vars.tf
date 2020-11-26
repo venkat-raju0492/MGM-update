@@ -83,6 +83,10 @@ variable "private_subnet_ids" {
   type = list
 }
 
+variable "vpc_id" {
+  description = "vpc id"
+}
+
 variable "backend_ecr_repo" {
   description = "backend ecr repo"
 }

@@ -55,3 +55,17 @@ variable "ecs_backend_scheduling_strategy" {
 variable "backend_security_group" {
   description = "backend security group id"
 }
+
+variable "ecs_launch_type" {
+  description = "ecs launch type"
+}
+
+
+variable "ecs_backend_role_arn" {
+  description = "ecs backend task def role arn"
+}
+
+
+variable "backend_lb_target_group_arn" {
+  description = "baclend load balancer target group arn"
+}

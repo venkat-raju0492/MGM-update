@@ -43,7 +43,7 @@ resource "aws_ecs_task_definition" "application_ecs_backend_task_definition" {
   requires_compatibilities      = [var.ecs_launch_type]
   cpu                           = var.backend_cpu
   memory                        = var.backend_memory
-  container_definitions         = data.template_file.ecs_frontned_template.rendered
+  container_definitions         = data.template_file.ecs_backend_template.rendered
 
   tags = merge(var.common_tags,
     {
